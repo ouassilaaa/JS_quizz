@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+body{
+    text-align: center;
+    margin: 0;
+    color: white;
+    min-height: 200vh;
+}
+
+.box{
+    border: 6px solid white;
+    transition: 0.25 ease;
+    background: grey;
+    padding: 10px;
+}
+
+p{
+    visibility: hidden;
+    width: 240px;
+    margin: 10px auto 0;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+/* changer style au click */
+.question-clicked{
+    background: blanchedalmond;
+    border-radius: 30px;
+    border: 6px solid pink;
+}
+
+/* faire apparaitre la reponse */
+
+.show-response{
+    visibility: visible;
+    opacity: 1;
+}
