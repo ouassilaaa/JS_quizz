@@ -68,23 +68,54 @@ btn2.addEventListener("click", ()=> {
     response.style.background="green";
 
 });
-
+//-----------------------------------------------------------------------------------------------
 //Mouse Events
 
 const mousemove = document.querySelector('.mousemove'); 
 console.log(mousemove);
 
-//(e)  event : récupere TOUTES données de l'evenement
-// window.addEventListener("mousemove", (e)=>{
-//     console.log(e.target); //target sert a cibler un élement précis 
-// });
+// //(e)  event : récupere TOUTES données de l'evenement
+// // window.addEventListener("mousemove", (e)=>{
+// //     console.log(e.target); //target sert a cibler un élement précis 
+// // });
 
 //rond suit la sourie 
-window.addEventListener('mousemove', (e)=>{
-    mousemove.style.left = e.pageX + "px"; 
-    mousemove.style.top = e.pageY + "px"; 
-}); 
+// document.addEventListener('mousemove', (e)=>{
+//     mousemove.style.left = e.pageX + "px"; 
+//     mousemove.style.top = e.pageY + "px"; 
+// }); 
 
-//ajuter event quand sourie est en bas 
+// //ajouter event   
+questionContainer.addEventListener("mouseout", ()=>{
+    questionContainer.style.background="pink"; 
+});
+
+
+//-----------------------------------------------------------------------------------------------
+//KeyPress event
+
+const keyPressContainer=document.querySelector(".keypress"); 
+const key = document.getElementById("key"); 
+console.log(key); 
+
+//on écoute les touches du clavier
+// document.addEventListener("keypress", ()=>{
+//     console.log("keypress ok!"); 
+// }); 
+
+//savoir la toucher appuyer
+document.addEventListener("keypress", (e)=>{
+    //afficher temps reel de manière dynamique
+    key.textContent=e.key;
+    console.log(e.key); 
+
+    if(e.key==="a"){
+        keyPressContainer.style.background="blue"; 
+    } else if(e.key==="b"){
+        keyPressContainer.style.background="green";
+    } else{
+        keyPressContainer.style.background="pink"; 
+    }
+}); 
 
 
