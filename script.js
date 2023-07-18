@@ -118,4 +118,69 @@ document.addEventListener("keypress", (e)=>{
     }
 }); 
 
+//-----------------------------------------------
+//Scroll Event
+
+const nav = document.querySelector("nav"); 
+console.log(nav); 
+
+window.addEventListener("scroll", ()=>{
+    console.log(window.scrollY); 
+
+    if(window.scrollY>120){
+        nav.style.top=0;
+    } else{
+        nav.style.top="-50px"; 
+    }
+}); 
+
+
+//-----------------------------------------------------------------------------------------------
+//Form Event
+
+const inputName=document.querySelector('input[type="text"]'); 
+const select =document.querySelector("select"); 
+const form =document.querySelector("form"); 
+
+//stocker ce que l'ont entre a event
+let pseudo=""; 
+let language=""; 
+//recuperer data accoler a cet evenement
+inputName.addEventListener("input",(e)=>{
+    // console.log(e.target.value);
+    pseudo=e.target.value; 
+});
+
+select.addEventListener("input", (e)=>{
+    // console.log(e.target.value);
+    language=e.target.value;  
+});
+
+//event sur la validation form 
+form.addEventListener("submit", (e)=>{
+    e.preventDefault(); //methode qui annule le changement de page
+    if(cgv.checked){
+        //on recupere la div enfant sans passer par une const
+        //innerHTML permet d'injecter balises html
+        document.querySelector("form>div").innerHTML = `
+        <h3>Pseudo: ${pseudo}</h3>
+        <h4>Langage préféré : ${language}</h4> `;
+
+    } else {
+        //si cgv non accepte
+        alert('Veuillez accepter les CGV')
+    }
+}); 
+
+//-----------------------------------------------------------------------------------------------
+//ForEach : appliquer une logique sur plusieurs elements au meme nom a la fois
+
+const boxes=document.querySelectorAll(".box"); 
+console.log(boxes); 
+
+boxes.forEach((box) =>{
+    box.addEventListener("click", (e)=>{
+        e.target.style.transform="scale(0.9)"; 
+    });
+});
 

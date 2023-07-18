@@ -49,3 +49,18 @@ p{
     border-radius: 50px;
 
 }
+
+nav{
+    background:black;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: -50px;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+}
