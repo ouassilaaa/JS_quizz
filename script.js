@@ -184,3 +184,24 @@ boxes.forEach((box) =>{
     });
 });
 
+//-----------------------------------------------------------------------------------
+//Stop propagation : arrêter un event particulier: utile si on veut éviter qu'un event en écrase un autre 
+questionContainer.addEventListener("click",(e)=>{
+    alert('Test:)'); 
+    e.stopPropagation();
+});
+
+//----------------------------------------------------------------------------------------
+//possibilité de retirer un event avec methode removeEventListener
+
+//-----------------------------------------------------------------------------------------
+//BOM
+
+//-----------------------------------------------------------------------------------------
+//SetProprety méthode définit une nouvelle valeur pour une propriété sur un objet de déclaration de style CSS
+
+window.addEventListener('mousemove', (e)=>{
+    console.log(e); 
+    nav.style.setProperty("--x", e.layerX+"px");
+    nav.style.setProperty("--y", e.layerY+"px");
+})
